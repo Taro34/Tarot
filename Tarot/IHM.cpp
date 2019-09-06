@@ -1,12 +1,9 @@
 #include "stdafx.h"
 #include "stdlib.h"
 #include "stdio.h"
-#include "iostream";
-#include "string";
-#include "CDonne.h";
-#include "IHM.h";
-#include "CJoueur.h";
-#include "CPartie.h";
+#include "iostream"
+#include "string"
+#include "IHM.h"
 using namespace std;
 
 IHM::IHM(string Nom, int Score)

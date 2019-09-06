@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "stdlib.h"
 #include "stdio.h"
-#include "iostream";
-#include "string";
-#include "CJoueur.h";
-#include "IHM.h";
-#include "CPartie.h";
+#include "iostream"
+#include "string"
+#include "CJoueur.h"
+#include "IHM.h"
+#include "CPartie.h"
 
 using namespace std;
 
