@@ -3,6 +3,9 @@
 #include "stdio.h"
 #include "iostream";
 #include "string";
+#include "CJoueur.h";
+#include "IHM.h";
+#include "CPartie.h";
 
 using namespace std;
 
@@ -17,4 +20,10 @@ private:
 	enum typePoignee { Sans, Simple, Double, Triple };
 	enum campPetitAuBout { preneur, personne, defenseur };
 	enum typeChelem { sans, reussi, perdu, sansAnnonce };
+	CJoueur *leDonneur;
+	CJoueur **lePreneur;
+	CJoueur *lesDefensseurs[3];
+
+public:
+	CDonne(Cjoueur &, Cjoueur &, Cjoueur &);
 };

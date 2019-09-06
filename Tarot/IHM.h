@@ -3,6 +3,9 @@
 #include "stdio.h"
 #include "iostream";
 #include "string";
+#include "CDonne.h";
+#include "CJoueur.h";
+#include "CPartie.h";
 
 using namespace std;
 
