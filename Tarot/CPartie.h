@@ -3,19 +3,14 @@
 #include "stdio.h"
 #include "iostream";
 #include "string";
-#
+
 using namespace std;
 
-int main()
+class CPartie
 {
-	
-	
+	public:
+		void (CJoueur *);
+		void (CDonne *);
 
 
-}
-
-
-
-
-
-
+};

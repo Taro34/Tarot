@@ -3,19 +3,12 @@
 #include "stdio.h"
 #include "iostream";
 #include "string";
-#
+
 using namespace std;
 
-int main()
+class IHM
 {
-	
-	
-
-
-}
-
-
-
-
-
-
+	private:
+		CJoueur *lesJoueurs[4];
+		CPartie *laPartie;
+};
