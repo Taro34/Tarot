@@ -60,6 +60,8 @@ void IHM::saisirjoueur()
 
 }
 
+
+
 void main()
 {
 	IHM ihm;

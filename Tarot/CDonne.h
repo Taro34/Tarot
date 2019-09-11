@@ -26,5 +26,5 @@ public:
 	CDonne(CJoueur*);
 	void setPreneur(CJoueur *);
 	void setDefenseurs(CJoueur*[]);
-
-};
+	void calculpoints(int nbBouts, int nbPoints, CJoueur *lePrenneur, Contrat typeContrat);
+	};
