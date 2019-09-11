@@ -18,6 +18,5 @@ class IHM
 
 	public:
 		void saisirjoueur();
-		IHM();
 		~IHM();
 };

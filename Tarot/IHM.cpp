@@ -57,11 +57,11 @@ void IHM::saisirjoueur()
 	lesJoueurs[3] = new CJoueur(joueur4);
 
 
-	return;
+
 }
-/*
+
 void main()
 {
 	IHM ihm;
 	ihm.saisirjoueur();
-}*/
+}
