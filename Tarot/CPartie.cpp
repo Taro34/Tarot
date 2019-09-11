@@ -7,13 +7,14 @@
 #include "CPartie.h"
 using namespace std;
 
-CPartie::CPartie(CJoueur& LesJoueurs, int nDonne) 
+CPartie::CPartie(CJoueur* lesJoueurs[]) 
 {
-	nbDonne = nDonne;
-	Joueurs = &LesJoueurs;
-	lesDonnes = new CDonne*[nbDonne];
-	for (int i = 0; i < nbDonne; i++)
-		lesDonnes[i] = new CDonne();
+	for (int i = 0; i < 4; i++)
+	{
+		this->lesJoueurs[i] = lesJoueurs[i];
+	}
+	lesDonnes = new CDonne*[100];
+	nbDonne = 0;
 
 }
 CPartie::~CPartie()
@@ -21,4 +22,10 @@ CPartie::~CPartie()
 	for (int i = 0; i < nbDonne; i++)
 		delete lesDonnes[i];
 	delete[] lesDonnes;
+}
+
+void CPartie::creerDonnes(CJoueur * leDonneur)
+{
+	lesDonnes[nbDonne] = new CDonne(leDonneur);
+	nbDonne++;
 }

@@ -6,10 +6,20 @@
 #include "CDonne.h"
 
 
-CDonne::CDonne(Cjoueur& LeDonneur, Cjoueur& LePreneur, Cjoueur& LesDefenseurs)
+CDonne::CDonne(CJoueur* leDonneur)
 {
-	leDonneur = &LeDonneur;
-	lePreneur = &LePreneur;
-	lesDefenseurs = &LesDefenseurs;
+	this->leDonneur = leDonneur;
 
+}
+
+void CDonne::setPreneur(CJoueur * preneur)
+{
+	lePreneur = preneur;
+}
+void CDonne::setDefenseurs(CJoueur * defenseur[])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		lesDefensseurs[i] = defenseur[i];
+	}
 }

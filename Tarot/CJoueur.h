@@ -1,12 +1,6 @@
+#pragma once
 #include "stdafx.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "iostream"
 #include "string"
-#include "IHM.h"
-#include "CPartie.h"
-
-
 using namespace std;
 	
 class CJoueur
@@ -18,5 +12,6 @@ private:
 public:
 	string lireNom();
 	int lireScore();
-	int majScore();
+	int majScore(int);
+	CJoueur(string nom, int score = 0);
 };

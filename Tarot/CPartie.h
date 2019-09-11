@@ -1,19 +1,17 @@
+#pragma once
 #include "stdafx.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "iostream"
-#include "string"
 #include "CJoueur.h"
-#include "string"
-using namespace std;
+#include "CDonne.h"
 
 class CPartie
-{
+{  private:
+		CDonne **lesDonnes;
+		CJoueur *lesJoueurs[4];
+		int nbDonne;
+
 	public:
+		CPartie(CJoueur* lesJoueurs[]);
+		~CPartie();
+		void creerDonnes(CJoueur* leDonneur);
 	
-	private:
-		Cdonne **lesDonnes;
-		Cjoueur *lesJoueurs[4];
-
-
 };

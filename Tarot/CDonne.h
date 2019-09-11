@@ -1,29 +1,30 @@
+#pragma once
 #include "stdafx.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "iostream"
-#include "string"
 #include "CJoueur.h"
-#include "IHM.h"
-#include "CPartie.h"
 
 using namespace std;
+enum Contrat { passe, prise, garde, gardeSans, GardeContre };
+enum Camp { preneur, personne, defenseur };
+enum Poignee { Sans, Simple, Double, Triple };
+enum Chelem { sans, reussi, perdu, sansAnnonce };
 
 class CDonne
 {
 private:
-	int NbPoints;
-	int NbBouts;
+	Contrat typeContrat;
+	Camp campPoignee;
+	Camp campPetitAuBout;
+	Chelem typeChelem;
+	int nbPoints;
+	int nbBouts;
 	int points;
-	enum typeContrat { passe, prise, garde, gardeSans, GardeContre };
-	enum campPoignee { preneur, personne, defenseur };
-	enum typePoignee { Sans, Simple, Double, Triple };
-	enum campPetitAuBout { preneur, personne, defenseur };
-	enum typeChelem { sans, reussi, perdu, sansAnnonce };
 	CJoueur *leDonneur;
-	CJoueur **lePreneur;
+	CJoueur *lePreneur;
 	CJoueur *lesDefensseurs[3];
 
 public:
-	CDonne(Cjoueur &, Cjoueur &, Cjoueur &);
+	CDonne(CJoueur*);
+	void setPreneur(CJoueur *);
+	void setDefenseurs(CJoueur*[]);
+
 };
