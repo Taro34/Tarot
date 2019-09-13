@@ -88,11 +88,10 @@ void IHM::saisie_contrat()
 		cout << lesJoueurs[3]->lireNom();
 		cout << "\n";
 		cin >> numPreneur;
-		numPreneur--;
+		numPreneur = numPreneur - 1;
 		int Contrat;
 		CJoueur *lePreneur = lesJoueurs[numPreneur];
 		laPartie->setPreneur(lePreneur);
-
 		/*
 		cout << "1 : prise\n";
 		cout << "2 : garde\n";

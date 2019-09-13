@@ -13,6 +13,7 @@ void main() {
 	IHM ihm;
 	//CDonne point;
 	ihm.saisirjoueur();
+	ihm.creer_partie();
 	ihm.saisie_contrat();
 	//point.calculpoints();
 }

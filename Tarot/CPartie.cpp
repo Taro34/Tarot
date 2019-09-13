@@ -13,7 +13,7 @@ CPartie::CPartie(CJoueur* lesJoueurs[])
 	{
 		this->lesJoueurs[i] = lesJoueurs[i];
 	}
-	lesDonnes = new CDonne*[100];
+	lesDonnes = new CDonne;
 	nbDonne = 0;
 
 }
@@ -29,6 +29,7 @@ void CPartie::creerDonnes(CJoueur * leDonneur)
 	lesDonnes[nbDonne] = new CDonne(leDonneur);
 	nbDonne++;
 }
+
 
 void CPartie::setPreneur(CJoueur * lePreneur)
 {
