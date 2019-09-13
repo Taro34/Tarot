@@ -62,8 +62,3 @@ void IHM::saisirjoueur()
 
 
 
-void main()
-{
-	IHM ihm;
-	ihm.saisirjoueur();
-}

@@ -18,13 +18,18 @@ private:
 	int nbPoints;
 	int nbBouts;
 	int points;
+	int nbpoint_a_faire;
+	int nbpoint_en_plus;
+	int coef_contrat;
 	CJoueur *leDonneur;
 	CJoueur *lePreneur;
 	CJoueur *lesDefensseurs[3];
 
 public:
+	CDonne();
+	void saisie_prise();
 	CDonne(CJoueur*);
 	void setPreneur(CJoueur *);
 	void setDefenseurs(CJoueur*[]);
-	void calculpoints(int nbBouts, int nbPoints, CJoueur *lePrenneur, Contrat typeContrat);
+	void calculpoints();
 	};
