@@ -4,7 +4,8 @@
 #include "CDonne.h"
 
 class CPartie
-{  private:
+{  
+	private:
 		CDonne **lesDonnes;
 		CJoueur *lesJoueurs[4];
 		int nbDonne;
@@ -13,5 +14,6 @@ class CPartie
 		CPartie(CJoueur* lesJoueurs[]);
 		~CPartie();
 		void creerDonnes(CJoueur* leDonneur);
+		void setPreneur(CJoueur *lePreneur);
 	
 };

@@ -29,3 +29,9 @@ void CPartie::creerDonnes(CJoueur * leDonneur)
 	lesDonnes[nbDonne] = new CDonne(leDonneur);
 	nbDonne++;
 }
+
+void CPartie::setPreneur(CJoueur * lePreneur)
+{
+	lesDonnes[nbDonne - 1]->setPreneur(lePreneur);
+}
+

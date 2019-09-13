@@ -11,12 +11,10 @@ using namespace std;
 
 void main() {
 	IHM ihm;
+	//CDonne point;
 	ihm.saisirjoueur();
-	CDonne saisie_contrat;
-	CDonne point;
-	saisie_contrat.saisie_prise();
-	point = saisie_contrat;
-	point.calculpoints();
+	ihm.saisie_contrat();
+	//point.calculpoints();
 }
 
 

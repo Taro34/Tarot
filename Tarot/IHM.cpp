@@ -59,6 +59,99 @@ void IHM::saisirjoueur()
 
 
 }
+void IHM::saisie_contrat()
+{
+	bool Passe;
+	int saisie;
+	cout << "Est ce que quelqu'un a pris ? :\n 1 : oui \n 2 : non\n ";
+	cin >> saisie;
+	if (saisie == 1)
+		Passe = true;
+	else
+		Passe = false;
 
+	if (Passe == true)
+	{
+		int numPreneur;
+		cout << "qui a pris :";
+		cout << "1 :";
+		cout << lesJoueurs[0]->lireNom();
+		cout << "\n";
+		cout << "2 :";
+		cout << lesJoueurs[1]->lireNom();
+		cout << "\n";
+		cout << "3 :";
+		cout << lesJoueurs[2]->lireNom();
+		cout << "\n";
+		cout << "4 :";
+		cout << lesJoueurs[3]->lireNom();
+		cout << "\n";
+		cin >> numPreneur;
+		int Contrat;
+		CJoueur *lePreneur = lesJoueurs[numPreneur];
+		laPartie->setPreneur(lePreneur);
+		/*for (int i = 0; i < 3; i++)
+		{
+			CJoueur *lesDefensseurs[i] = lesJoueurs[
+		}
+		cout << "1 : prise\n";
+		cout << "2 : garde\n";
+		cout << "3 : garde sans\n";
+		cout << "4 : garde contre\n";
+		cout << "Entrez le Contrat : ";
+		cin >> Contrat;
 
+		switch (Contrat)
+		{
+		case 1:
+			typeContrat = prise;
+			break;
+		case 2:
+			typeContrat = garde;
+			break;
+		case 3:
+			typeContrat = gardeSans;
+			break;
+		case 4:
+			typeContrat = GardeContre;
+			break;
 
+		}
+		cout << "La partie commence !!!\n";
+		cout << NomPreneur;
+		cout << " a pris une ";
+		switch (typeContrat)
+		{
+		case prise:
+			cout << "prise\n";
+			break;
+		case garde:
+			cout << "garde\n";
+			break;
+		case gardeSans:
+			cout << "garde sans\n";
+			break;
+		case GardeContre:
+			cout << "garde contre\n";
+			break;
+		}
+		cout << "La partie ce passe...\n";
+		cout << "Nombre de point de ";
+		cout << NomPreneur;
+		cout << " : ";
+		cin >> points;
+		cout << "Nombre de bout : ";
+		cin >> nbBouts;
+		*/
+	}
+	else
+	{
+		cout << "Personne n'a pris... Redistribution\n";
+		//typeContrat = passe;
+	}
+}
+
+void IHM::creer_partie()
+{
+	laPartie = new CPartie(lesJoueurs);
+}

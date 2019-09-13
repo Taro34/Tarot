@@ -14,4 +14,5 @@ public:
 	int lireScore();
 	int majScore(int);
 	CJoueur(string nom, int score = 0);
+
 };

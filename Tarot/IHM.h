@@ -18,5 +18,7 @@ class IHM
 
 	public:
 		void saisirjoueur();
+		void saisie_contrat();
+		void creer_partie();
 		~IHM();
 };

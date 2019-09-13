@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "CJoueur.h"
+#include "IHM.h"
 
 using namespace std;
 enum Contrat { passe, prise, garde, gardeSans, GardeContre };
@@ -27,7 +28,7 @@ private:
 
 public:
 	CDonne();
-	void saisie_prise();
+	void CDonne::saisie_prise(CJoueur* lesJoueurs[]);
 	CDonne(CJoueur*);
 	void setPreneur(CJoueur *);
 	void setDefenseurs(CJoueur*[]);

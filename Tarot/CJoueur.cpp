@@ -29,3 +29,4 @@ CJoueur::CJoueur(string nom, int score)
 	this->score = score;
 
 }
+
