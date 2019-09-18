@@ -21,6 +21,7 @@ class IHM
 		void saisirjoueur();
 		void saisie_contrat();
 		void creer_partie();
+		void lireScoreJoueur();
 		~IHM();
 		IHM();
 };

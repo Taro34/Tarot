@@ -77,11 +77,43 @@ void CDonne::calculpoints()
 		coef_contrat = 6;
 		break;
 	}
+	switch (typePoignee)
+	{
+	case Sans:
+		pointPoignee = 0;
+		break;
+	case Simple:
+		pointPoignee = 20;
+		break;
+	case Double:
+		pointPoignee = 30;
+		break;
+	case Triple:
+		pointPoignee = 40;
+		break;
+	default:
+		break;
+	}
 	nbpoint_en_plus = points - nbpoint_a_faire;
 	if (nbpoint_en_plus >= 0)
-		nbPoints = (25 + nbpoint_en_plus) * coef_contrat;
+		nbPoints = (25 + nbpoint_en_plus) * coef_contrat + pointPoignee;
 	else
-		nbPoints = (-25 + nbpoint_en_plus) * coef_contrat;
+		nbPoints = (-25 + nbpoint_en_plus) * coef_contrat - pointPoignee;
+	switch (campPetitAuBout)
+	{
+	case preneur:
+		lePreneur->majScore(10);
+		break;
+	case personne:
+		break;
+	case defenseur:
+		for (int i = 0; i < 3; i++)
+			lesDefenseurs[i]->majScore(10);
+		break;
+	default:
+		break;
+	}
+	cout << "point : ";
 	cout << nbPoints;
 	cout << "\n";
 	lePreneur->majScore(nbPoints * 3);

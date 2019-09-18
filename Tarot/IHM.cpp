@@ -70,6 +70,8 @@ void IHM::saisie_contrat()
 	int points;
 	int nbBouts;
 	Contrat typeContrat;
+	Poignee typePoignee;
+	Camp campPetitAuBout;
 	laPartie->creerDonnes(lesJoueurs[numDonneur%4]);
 	numDonneur++;
 	cout << "Est ce que quelqu'un a pris ? :\n 1 : oui \n 2 : non\n ";
@@ -128,6 +130,56 @@ void IHM::saisie_contrat()
 		laPartie->setTypeContrat(typeContrat);
 		cout << "La partie commence !!!\n";
 		cout << "La partie ce passe...\n";
+		int demandepoignee;
+		cout << "Est ce que quelqun a eu une poignee\n";
+		cout << "1 : oui\n";
+		cout << "2 : non\n";
+		cin >> demandepoignee;
+		int choixpoignee;
+		if (demandepoignee == 1)
+		{
+			cout << "quelle type de poignee: \n";
+			cout << "1 : simple\n";
+			cout << "2 : double\n";
+			cout << "3 : triple\n";
+			cin >> choixpoignee;
+			switch (choixpoignee)
+			{
+				case 1:
+					typePoignee = Simple;
+				break;
+				case 2:
+					typePoignee = Double;
+				break;
+				case 3 :
+					typePoignee = Triple;
+				break;
+			}
+		}
+		else
+		{
+			typePoignee = Sans;
+		}
+		laPartie->setPoingnee(typePoignee);
+		int testpetit;
+		cout << "qui a reussi le petit au bout :\n";
+		cout << "1 : le Preneur\n";
+		cout << "2 : les Defenseurs\n";
+		cout << "3 : personne\n";
+		cin >> testpetit;
+		switch (testpetit)
+		{
+			case 1:
+				campPetitAuBout = preneur;
+				break;
+			case 2:
+				campPetitAuBout = defenseur;
+				break;
+			case 3:
+				campPetitAuBout = personne;
+				break;
+		}
+		laPartie->setCampPetit(campPetitAuBout);
 		cout << "Nombre de point de ";
 		cout << " : ";
 		cin >> points;
@@ -148,4 +200,15 @@ void IHM::saisie_contrat()
 void IHM::creer_partie()
 {
 	laPartie = new CPartie(lesJoueurs);
+}
+
+void IHM::lireScoreJoueur()
+{
+	for (int i = 0; i < 4; i++)
+	{
+		cout << lesJoueurs[i]->lireNom();
+		cout << " : ";
+		cout << lesJoueurs[i]->lireScore();
+		cout << "\n";
+	}
 }

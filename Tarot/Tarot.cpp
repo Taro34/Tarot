@@ -15,7 +15,7 @@ void main() {
 	ihm.saisirjoueur();
 	ihm.creer_partie();
 	ihm.saisie_contrat();
-	
+	ihm.lireScoreJoueur();
 	
 }
 

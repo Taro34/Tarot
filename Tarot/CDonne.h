@@ -22,6 +22,7 @@ private:
 	int nbpoint_a_faire;
 	int nbpoint_en_plus;
 	int coef_contrat;
+	int pointPoignee;
 	CJoueur *leDonneur;
 	CJoueur *lePreneur;
 	CJoueur *lesDefenseurs[3];
