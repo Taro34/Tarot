@@ -1,7 +1,6 @@
 #pragma once
 #include "stdafx.h"
 #include "CJoueur.h"
-#include "IHM.h"
 
 using namespace std;
 enum Contrat { passe, prise, garde, gardeSans, GardeContre };
@@ -16,6 +15,7 @@ private:
 	Camp campPoignee;
 	Camp campPetitAuBout;
 	Chelem typeChelem;
+	Poignee typePoignee;
 	int nbPoints;
 	int nbBouts;
 	int points;
@@ -24,13 +24,16 @@ private:
 	int coef_contrat;
 	CJoueur *leDonneur;
 	CJoueur *lePreneur;
-	CJoueur *lesDefensseurs[3];
+	CJoueur *lesDefenseurs[3];
 
 public:
 	CDonne();
-	void CDonne::saisie_prise(CJoueur* lesJoueurs[]);
 	CDonne(CJoueur*);
 	void setPreneur(CJoueur *);
 	void setDefenseurs(CJoueur*[]);
+	void setTypeContrat(Contrat typeContrat);
+	void setPoint(int points, int nbBouts);
+	void setPoingnee(Poignee typePoingnee);
+	void setCampPetit(Camp campPetitAuBout);
 	void calculpoints();
 	};

@@ -13,6 +13,10 @@ IHM::~IHM()
 	for (int i = 0; i < 4; i++)
 		delete lesJoueurs[i];
 }
+IHM::IHM()
+{
+	numDonneur = 0;
+}
 void IHM::saisirjoueur()
 {
 
@@ -63,6 +67,11 @@ void IHM::saisie_contrat()
 {
 	bool Passe;
 	int saisie;
+	int points;
+	int nbBouts;
+	Contrat typeContrat;
+	laPartie->creerDonnes(lesJoueurs[numDonneur%4]);
+	numDonneur++;
 	cout << "Est ce que quelqu'un a pris ? :\n 1 : oui \n 2 : non\n ";
 	cin >> saisie;
 	if (saisie == 1)
@@ -92,7 +101,7 @@ void IHM::saisie_contrat()
 		int Contrat;
 		CJoueur *lePreneur = lesJoueurs[numPreneur];
 		laPartie->setPreneur(lePreneur);
-		/*
+		
 		cout << "1 : prise\n";
 		cout << "2 : garde\n";
 		cout << "3 : garde sans\n";
@@ -116,38 +125,24 @@ void IHM::saisie_contrat()
 			break;
 
 		}
+		laPartie->setTypeContrat(typeContrat);
 		cout << "La partie commence !!!\n";
-		cout << NomPreneur;
-		cout << " a pris une ";
-		switch (typeContrat)
-		{
-		case prise:
-			cout << "prise\n";
-			break;
-		case garde:
-			cout << "garde\n";
-			break;
-		case gardeSans:
-			cout << "garde sans\n";
-			break;
-		case GardeContre:
-			cout << "garde contre\n";
-			break;
-		}
 		cout << "La partie ce passe...\n";
 		cout << "Nombre de point de ";
-		cout << NomPreneur;
 		cout << " : ";
 		cin >> points;
 		cout << "Nombre de bout : ";
 		cin >> nbBouts;
-		*/
+		laPartie->setPoint(points, nbBouts);
+		laPartie->calculerDonne();
+		
 	}
 	else
 	{
 		cout << "Personne n'a pris... Redistribution\n";
-		//typeContrat = passe;
+		typeContrat = passe;
 	}
+
 }
 
 void IHM::creer_partie()

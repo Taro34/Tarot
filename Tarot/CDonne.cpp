@@ -25,8 +25,25 @@ void CDonne::setDefenseurs(CJoueur * defenseur[])
 {
 	for (int i = 0; i < 3; i++)
 	{
-		lesDefensseurs[i] = defenseur[i];
+		lesDefenseurs[i] = defenseur[i];
 	}
+}
+void CDonne::setTypeContrat(Contrat typeContrat)
+{
+	this->typeContrat = typeContrat;
+}
+void CDonne::setPoint(int points, int nbBouts)
+{
+	this->points = points;
+	this->nbBouts = nbBouts;
+}
+void CDonne::setPoingnee(Poignee typePoingnee)
+{
+	this->typePoignee = typePoignee;
+}
+void CDonne::setCampPetit(Camp campPetitAuBout)
+{
+	this->campPetitAuBout = campPetitAuBout;
 }
 void CDonne::calculpoints()
 {
@@ -67,9 +84,9 @@ void CDonne::calculpoints()
 		nbPoints = (-25 + nbpoint_en_plus) * coef_contrat;
 	cout << nbPoints;
 	cout << "\n";
-	//lePreneur->majScore(nbPoints * 3);
-	//for (int i = 0; i < 3; i++)
-		//lesDefensseurs[i]->majScore(-nbPoints);
+	lePreneur->majScore(nbPoints * 3);
+	for (int i = 0; i < 3; i++)
+		lesDefenseurs[i]->majScore(-nbPoints);
 	
 }
 
